@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>W4_BMI Kata</title>
+  </head>
+  <body>
+    <script>
+      //   let weight = 20;
+      //   let height = 178;
+      let bmiHistoryData = [
+        {
+          calBMI: 0,
+        },
+      ];
+
+      const bmiStatesData = {
+        overThin: {
+          state: "過輕",
+          color: "藍色",
+        },
+        normal: {
+          state: "正常",
+          color: "紅色",
+        },
+        overWeight: {
+          state: "過重",
+          color: "橙色",
+        },
+        mildFat: {
+          state: "輕度肥胖",
+          color: "黃色",
+        },
+        moderateFat: {
+          state: "中度肥胖",
+          color: "黑色",
+        },
+        severeFat: {
+          state: "重度肥胖",
+          color: "綠色",
+        },
+      };
+      // 先把console.log 重複的值定為一個變數
+      function bmiStatus(status) {
+        // console.log(status);
+        console.log(
+          `你的體重${bmiStatesData[status].state}，健康指數為${bmiStatesData[status].color}`
+        );
+      }
+
+      // 再設定計算bimHistoryData次數跟push的函式
+      function pushbmiHistroyData(bmi, weight, status) {
+        //   先把數量塞進去
+        bmiHistoryData[0].calBMI += 1;
+        console.log(bmiHistoryData[0].calBMI);
+
+        //   再把計算資料塞進去
+        let obj = {};
+        obj.bmi = bmi.toFixed(2);
+        obj.weight = weight;
+        obj.state = bmiStatesData[status].state;
+        obj.color = bmiStatesData[status].color;
+        bmiHistoryData.push(obj);
+      }
+
+      function printBmi(height, weight) {
+        let bmi = weight / ((height / 100) * (height / 100));
+        if (bmi < 18.5) {
+          // 取物件可以用bmiStatesData["overThin"] 或是bmiStatesData.overThin的方法
+          bmiStatus("overThin");
+          pushbmiHistroyData(bmi, weight, "overThin");
+          //   console.log(bmiHistoryData);
+        } else if (bmi >= 18.5 && bmi < 24) {
+          bmiStatus("normal");
+          pushbmiHistroyData(bmi, weight, "normal");
+        } else if (bmi >= 24 && bmi < 27) {
+          bmiStatus("overWeight");
+          pushbmiHistroyData(bmi, weight, "overWeight");
+        } else if (bmi >= 27 && bmi < 30) {
+          bmiStatus("mildFat");
+          pushbmiHistroyData(bmi, weight, "mildFat");
+        } else if (bmi >= 30 && bmi < 35) {
+          bmiStatus("moderateFat");
+          pushbmiHistroyData(bmi, weight, "moderateFat");
+        } else if (bmi >= 35) {
+          bmiStatus("severeFat");
+          pushbmiHistroyData(bmi, weight, "severeFat");
+        } else {
+          console.log("輸入錯誤");
+          bmiHistoryData[0].calBMI += 1;
+          console.log(bmiHistoryData[0].calBMI);
+        }
+      }
+
+      function showHistoryData() {
+        console.log(
+          `你總共計算過${bmiHistoryData[0].calBMI}次BMI紀錄，最後一次BMI指數為${
+            bmiHistoryData[bmiHistoryData.length - 1].bmi
+          }，體重${
+            bmiHistoryData[bmiHistoryData.length - 1].weight
+          }公斤，整體體重${
+            bmiHistoryData[bmiHistoryData.length - 1].state
+          }，健康指數為${bmiHistoryData[bmiHistoryData.length - 1].color}`
+        );
+      }
+
+      printBmi(178, 20);
+      printBmi(178, 70);
+      printBmi(178, 85);
+      showHistoryData();
+
+      //   console.log(bimHistoryData[bimHistoryData.length - 1]);
+
+      //   console.log(bimHistoryData);
+    </script>
+  </body>
+</html>

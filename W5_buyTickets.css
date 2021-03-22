@@ -1,0 +1,112 @@
+/* * {
+    outline: 1px solid red;
+} */
+
+body {
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2em;
+    color: #00807E;
+}
+
+/* ----*/
+.addTicketPannel {
+    max-width: 920px;
+    max-height: 704px;
+    box-shadow: 0 3px 6px #00000029;
+    display: flex;
+    margin: auto;
+}
+
+.addTicket_img {
+    width: 50%;
+    padding: 60px 0 138px 95px;
+}
+
+.logo {
+    margin-bottom: 12px;
+}
+
+/* 選單區塊 */
+.addTicketForm {
+    width: 50%;
+    margin-top: 60px;
+    padding-right: 95px;
+    display: flex;
+    flex-flow: column;
+}
+
+.formTitle {
+    color: #00807E;
+    border-bottom: 3px solid #00807E;
+    padding-bottom: 4px;
+    margin-bottom: 32px;
+}
+
+.formTitle span i {
+    padding-right: 6px;
+}
+
+.addTicket-input {
+    font-size: 1.4em;
+    color: #00807E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.addTicket-input label {
+    padding-right: 31px;
+}
+
+.addTicket-input input,
+select {
+    background-color: #FAFAFA;
+    border: none;
+    border-bottom: 1px solid #00807E;
+    /* font-size: 1.2em; */
+    padding: 8px 100px 8px 12px;
+    max-width: 255px
+}
+
+.addTicket-input select {
+    padding: 8px 130px 8px 12px;
+    color: #666
+}
+
+#groupTicketDescription {
+    box-sizing: border-box;
+    max-width: 255px;
+    background-color: #FAFAFA;
+    border: none;
+    border-bottom: 1px solid #00807E;
+    padding: 8px 0px 8px 12px;
+}
+
+.addTicket-btn {
+    width: 160px;
+    height: 48px;
+    background-color: #00807E;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 40px;
+    color: white;
+    font-size: 20px;
+    align-self: flex-end;
+}
+
+/* 卡片區塊 */
+.mainContent {
+    background-color: #eee;
+}
+
+@media (max-width: 768px) {
+
+    .addTicket-input {
+        display: block;
+    }
+}

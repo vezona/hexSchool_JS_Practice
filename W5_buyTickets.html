@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>W5_buy tickets</title>
+
+    <link rel="stylesheet" href="./css_reset.css">
+    <link rel="stylesheet" href="./W5_buyTickets.css">
+
+    <!-- fontAwesome cdn -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body>
+
+    <section class="addTicketPannel">
+        <div class="addTicket_img">
+            <img class="logo" src="./W5_img/undraw_Traveling_re_weve (1).png" alt="">
+            <img src="./W5_img/Let’s Travel !.png" alt="">
+        </div>
+
+        <form action="" class="addTicketForm">
+            <h1 class="formTitle">
+                <span><i class="fas fa-plus-circle"></i></span>新增旅遊套票
+            </h1>
+            <div class="formGroup">
+                <div class="addTicket-input">
+                    <label for="ticketName">套票名稱</label>
+                    <input type="text" id="ticketName" placeholder="請填寫套票名稱" name="ticketName">
+                </div>
+            </div>
+            <!-- 圖片網址 -->
+            <div class="formGroup">
+                <div class="addTicket-input">
+                    <label for="ticketURL">圖片網址</label>
+                    <input type="text" id="ticketURL" placeholder="請填寫圖片網址" name="ticketURL">
+                </div>
+            </div>
+            <!--  景點地區 -->
+            <div class="formGroup">
+                <div class="addTicket-input">
+                    <label for="ticketRegion">景點地區</label>
+                    <select id="ticketRegion" name="景點地區">
+                        <option value="" disabled selected hidden>請選擇景點地區</option>
+                        <option value="台北">台北</option>
+                        <option value="台北">台中</option>
+                        <option value="台北">高雄</option>
+                    </select>
+
+                </div>
+            </div>
+            <!-- 套票金額 -->
+            <div class="formGroup">
+                <div class="addTicket-input">
+                    <label for="groupTicketPrice">套票金額</label>
+                    <input type="text" id="groupTicketPrice" placeholder="請填寫套票金額" name="groupTicketPrice">
+                </div>
+            </div>
+            <!-- 套票組數 -->
+            <div class="formGroup">
+                <div class="addTicket-input">
+                    <label for="groupTicketSet">套票組數</label>
+                    <input type="text" id="groupTicketSet" placeholder="請填寫套票組數" name="groupTicketSet">
+                </div>
+            </div>
+            <!-- 套票星級 -->
+            <div class="formGroup">
+                <div class="addTicket-input">
+                    <label for="groupTicketStar">套票星級</label>
+                    <input type="text" id="groupTicketStar" placeholder="請填寫套票星級" name="groupTicketStar">
+                </div>
+            </div>
+            <!-- 套票描述-->
+            <div class="formGroup">
+                <div class="addTicket-input">
+                    <label for="groupTicketDescription">套票描述</label>
+                    <textarea rows="4" cols="50" id="groupTicketDescription" placeholder="請填寫套票描述(限 100 字)"
+                        name="groupTicketDescription"></textarea>
+                </div>
+            </div>
+            <input type="button" class="addTicket-btn btn" value="新增套票">
+        </form>
+    </section>
+    <section class="mainContent"></section>
+
+
+    <script url="./W5_buyTickets.js"></script>
+</body>
+
+</html>
