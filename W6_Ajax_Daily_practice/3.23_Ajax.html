@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2021/3/23 Ajax Daily Practice</title>
+  </head>
+  <body>
+    <p id="targetName"></p>
+    <img id="targetImg" src="" alt="" />
+    <p id="targetArea"></p>
+
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      let data = [];
+      const targetName = document.querySelector("#targetName");
+      const targetImg = document.querySelector("#targetImg");
+      const targetArea = document.querySelector("#targetArea");
+
+      axios
+        .get(
+          "https://raw.githubusercontent.com/hexschool/js-training/main/travelAPI-lv1.json"
+        )
+        .then(function (res) {
+          //   console.log(res);
+          //   console.log(res.data);
+          data = res.data;
+
+          targetName.textContent = data[0].name;
+          targetImg.setAttribute("src", data[0].imgUrl);
+          targetArea.textContent = data[0].area;
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2021/3/22 Ajax Daily Practice</title>
+  </head>
+  <body>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      let data = [];
+
+      axios
+        .get(
+          "https://raw.githubusercontent.com/hexschool/js-training/main/travelAPI-lv1.json"
+        )
+        .then(function (res) {
+          //   console.log(res);
+          //   console.log(res.data);
+          data = res.data;
+          console.log(data);
+
+          //   該 JSON 的陣列資料總共有多少個物件?
+          console.log(data.length);
+          // 請輸出該 JSON 陣列資料的第一筆物件，屬性 id 所對應的值。
+          console.log(data[0].id);
+          // 請輸出該 JSON 陣列資料的第一筆物件，屬性 name 所對應的值。
+          console.log(data[0].name);
+          // 請輸出該 JSON 陣列資料的第一筆物件，屬性 imgUrl 所對應的值。
+          console.log(data[0].imgUrl);
+          // 請輸出該 JSON 陣列資料的第一筆物件，屬性 area 所對應的值。
+          console.log(data[0].area);
+          // 請輸出該 JSON 陣列資料的第一筆物件，屬性 description 所對應的值。
+          console.log(data[0].description);
+          // 請輸出該 JSON 陣列資料的第一筆物件，屬性 group 所對應的值。
+          console.log(data[0].group);
+          // 請輸出該 JSON 陣列資料的第一筆物件，屬性 price 所對應的值。
+          console.log(data[0].price);
+          // 請輸出該 JSON 陣列資料的第一筆物件，屬性 rate 所對應的值。
+          console.log(data[0].rate);
+        });
+    </script>
+  </body>
+</html>
