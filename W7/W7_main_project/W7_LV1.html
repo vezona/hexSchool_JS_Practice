@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>W1 LV1</title>
+    <!-- 套件 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.18/c3.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.18/c3.js"></script>
+  </head>
+  <body>
+    <div id="chart"></div>
+
+    <script>
+      //API https://raw.githubusercontent.com/hexschool/js-training/main/travelAPI-lv1.json
+
+      //   抓到資料
+      let data;
+      function init() {
+        axios
+          .get(
+            "https://raw.githubusercontent.com/hexschool/js-training/main/travelAPI-lv1.json"
+          )
+          .then(function (res) {
+            data = res.data;
+            // console.log(data);
+            filterData();
+          });
+      }
+
+      //   CS 資料呈現
+      function filterData() {
+        //   先整理資料
+        let totalObj = {};
+        data.forEach(function (item, index) {
+          if (totalObj[item.area] == undefined) {
+            totalObj[item.area] = 1;
+          } else {
+            totalObj[item.area] += 1;
+          }
+        });
+        console.log(totalObj);
+
+        // C3格式
+        let csData = [];
+        let newdata = Object.keys(totalObj);
+        console.log(newdata);
+        newdata.forEach(function (item, index) {
+          let ary = [];
+          ary.push(item);
+          //   console.log(totalObj[item]);
+          ary.push(totalObj[item]);
+          //   console.log(ary);
+          csData.push(ary);
+        });
+        console.log(csData);
+
+        // 將 csData 丟入 c3 產生器
+        const chart = c3.generate({
+          bindto: "#chart",
+          data: {
+            columns: csData,
+            type: "donut",
+          },
+          donut: {
+            title: "地區",
+          },
+        });
+      }
+
+      init();
+    </script>
+  </body>
+</html>
