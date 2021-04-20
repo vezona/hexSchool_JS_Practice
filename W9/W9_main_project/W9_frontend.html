@@ -8,9 +8,15 @@
     <!-- css -->
     <link rel="stylesheet" href="./W9_frontend.css" />
     <!-- icons -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">  
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
     <!-- 套件 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
     <link
@@ -305,38 +311,33 @@
       <h3 class="section-title">我的購物車</h3>
       <div class="overflowWrap">
         <table class="shoppingCart-table">
-          <tr>
-            <th width="40%">品項</th>
-            <th width="15%">單價</th>
-            <th width="15%">數量</th>
-            <th width="15%">金額</th>
-            <th width="15%"></th>
-          </tr>
-          <tr>
-            <td>
-              <div class="cardItem-title">
-                <img src="./img/HvT3zlU.png" alt="" />
-                <p>Antony 雙人床架／雙人加大</p>
-              </div>
-            </td>
-            <td>NT$12,000</td>
-            <td>1</td>
-            <td>NT$12,000</td>
-            <td class="discardBtn">
-              <a href="#" class="material-icons"> clear </a>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <a href="#" class="discardAllBtn">刪除所有品項</a>
-            </td>
-            <td></td>
-            <td></td>
-            <td>
-              <p>總金額</p>
-            </td>
-            <td>NT$13,980</td>
-          </tr>
+          <thead>
+            <tr>
+              <th width="40%">品項</th>
+              <th width="15%">單價</th>
+              <th width="15%">數量</th>
+              <th width="15%">金額</th>
+              <th width="15%"></th>
+            </tr>
+          </thead>
+          <tbody class="shoppingCart-tableBody">
+            <tr>
+              <td>目前購物車無資料</td>
+            </tr>
+          </tbody>
+          <tfoot class="shoppingCart-tableFoot">
+            <tr>
+              <td>
+                <a href="#" class="discardAllBtn">刪除所有品項</a>
+              </td>
+              <td></td>
+              <td></td>
+              <td>
+                <p>總金額</p>
+              </td>
+              <td class="totalMoney">NT$13,980</td>
+            </tr>
+          </tfoot>
         </table>
       </div>
     </section>
@@ -472,6 +473,7 @@
     </script>
 
     <!-- JS -->
+    <script src="./config.js"></script>
     <script src="./W9_frontend.js"></script>
   </body>
 </html>
